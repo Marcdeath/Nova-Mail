@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta,http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lang.py">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Nova Mail</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><h1>Nova Mail</h1></div>
+        <ul class="menu">
+            <li><a href="#" class="active">Accueil</a></li>
+            <li><a href="#" class="fa-solid fa-user"></a></li>
+            <li><a href="#" class="fa-solid fa-cart-shopping"></a></li>
+        </ul>
+    </nav>
+<br>
+
+<section class="content">
+
+        <div class="container">
+       
+            <div class="email-box">
+                <h1><strong> Générateur d'e-mail temporaire </strong></h1>
+              
+              <input type="text" id="emailAddress" readonly>
+            <button class="copy-button" onclick="copyEmail()">📋</button>
+            <br>
+            <br>
+            <br>
+          <h5 class="titre-principal">Oubliez le spam, la publicité, le piratage et les attaques des robots,<br> l’e-mail temporaire et anonyme c’est l'absence d'engagement et de <br>risque. Temp Mail fournit une adresse e-mail anonyme, gratuite et <br> temporaire.</h5>
+    
+            <button onclick="generateEmail()">🔄 Générer</button>
+           <br>
+           <div class="button-container">
+            <button class="custom-button">
+              <span class="icon">📋</span> Copier
+            </button>
+            <button class="custom-button">
+              <span class="icon">🔄</span> Actualiser
+            </button>
+            <button class="custom-button">
+              <span class="icon">✍️</span> Retour
+            </button>
+            <button class="custom-button">
+              <span class="icon">❌</span> Supprimer
+            </button>
+          </div>
+          
+          </div>
+          
+            </div>
+       
+<br>
+<div class="inbox">
+  <div class="inbox-header">
+    <span>EXPÉDITEUR</span>
+    <span>OBJET</span>
+    <span>APERÇU</span>
+  </div>
+  <div class="inbox-empty">
+    <div class="inbox-icon">📩</div>
+    <h2>Votre boîte de réception est vide</h2>
+    <p>En attente d'e-mails entrants</p>
+  </div>
+    
+  <script>
+    function generateEmail() {
+      // Appelle l'API pour générer un mail (backend)
+      fetch('/generate')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("emailAddress").value = data.email;
+          document.getElementById("inbox").innerHTML = "<p>Boîte vide pour l’instant...</p>";
+        });
+    }
+  </script>
+  
+  <div class="content3">
+        
+       <h1> Nova Mail</h1>
+        <p>
+           <h2>E-mail temporaire anonyme gratuit</h2><br>
+
+           <h3>Pourquoi l'utiliser ?</h3> <br>
+            
+            Vous souhaitez peut-être vous inscrire sur un site qui exige une adresse e-mail pour l'envoi d'e-mails de validation. <br>Et vous ne voulez peut-être pas divulguer votre véritable adresse e-mail et vous retrouver sur des listes de spam.<br> C'est pratique et jetable. Et c'est gratuit. Profitez-en !
+            
+            </p>
+
+        </section>
+    <br>
+    
+    <footer class="footer-section">
+      <div class="top-links">
+        <a href="#">PREMIUM</a>
+        <a href="#">API</a>
+        <a href="#">DES ARTICLES</a>
+        <a href="#">NOVA MAIL</a>
+        <a href="#">PRIVACY</a>
+        <a href="#">TERMS</a>
+        <a href="#">FAQ</a>
+        <a href="#">CONTACTS</a>
+        <a href="#">ADVERTISING</a>
+      </div>
+    
+      <hr />
+    
+      <div class="apps-social">
+        <span>Temp-Number | Nova Mail | My Phone Number</span>
+        <div class="icon-group">
+          <a class="icon-btn" href="#"><img src="tiktok-icon.png" alt="Tiktok" /></a>
+          <a class="icon-btn" href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+          <a class="icon-btn" href="#"><img src="chrome-icon.png" alt="Chrome" /></a>
+          <a class="icon-btn" href="#"><img src="telegram-icon.png" alt="Telegram" /></a>
+        </div>
+        <div class="language-selector">
+          <img src="fr-flag.png" alt="FR" />
+          <select>
+            <option selected>FR</option>
+            <option>EN</option>
+            <option>ES</option>
+          </select>
+        </div>
+      </div>
+    
+      <div class="ad-banner">
+        <img src="ad-banner.jpg" alt="Publicité" />
+      </div>
+    </footer>
+    
+    
+</body>
+
+</html> 
